@@ -1,0 +1,6 @@
+framework module RxObjectMapper {
+  umbrella header "RxObjectMapper-umbrella.h"
+
+  export *
+  module * { export * }
+}
