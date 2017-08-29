@@ -17,6 +17,7 @@ class Fachada: NSObject {
     func getFilms(title: String) -> Observable<Film> {
         return RxAlamofire.requestJSON(.get, (baseUrl+title).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
             .map { (r, json) -> [String: Any] in
+                print(r)
                 guard let jsonDict = json as? [String: Any] else {
                     return [:]
                 }

@@ -56,9 +56,8 @@ class ViewController: UIViewController {
     func setUpBindings() {
         let searchResult = searchBar.rx.value.orEmpty.throttle(1, scheduler: MainScheduler.instance)
         .distinctUntilChanged()
-            .map { $0.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""}
             .flatMapLatest { query -> Observable<Film> in
-                print("getfilms")
+                print("getfilms \(query)")
                 if (query.isEmpty) {
                     return self.viewModel.getFilms(title: "")
                 }
