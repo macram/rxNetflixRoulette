@@ -15,7 +15,6 @@
 		CE324E371F46DE39008A65E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE324E351F46DE39008A65E4 /* LaunchScreen.storyboard */; };
 		CE7F40BD1F46FFA300A33D39 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40BC1F46FFA300A33D39 /* Film.swift */; };
 		CE7F40BF1F47015100A33D39 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40BE1F47015100A33D39 /* ViewModel.swift */; };
-		CE7F40C11F47070100A33D39 /* UserCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40C01F47070100A33D39 /* UserCases.swift */; };
 		CE7F40C31F47070A00A33D39 /* Fachada.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40C21F47070A00A33D39 /* Fachada.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 		CE324E381F46DE39008A65E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7F40BC1F46FFA300A33D39 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		CE7F40BE1F47015100A33D39 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		CE7F40C01F47070100A33D39 /* UserCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCases.swift; sourceTree = "<group>"; };
 		CE7F40C21F47070A00A33D39 /* Fachada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fachada.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 				CE324E2C1F46DE39008A65E4 /* AppDelegate.swift */,
 				CE324E2E1F46DE39008A65E4 /* ViewController.swift */,
 				CE7F40BE1F47015100A33D39 /* ViewModel.swift */,
-				CE7F40C01F47070100A33D39 /* UserCases.swift */,
 				CE7F40C21F47070A00A33D39 /* Fachada.swift */,
 				CE324E301F46DE39008A65E4 /* Main.storyboard */,
 				CE324E331F46DE39008A65E4 /* Assets.xcassets */,
@@ -252,7 +249,6 @@
 				CE324E2F1F46DE39008A65E4 /* ViewController.swift in Sources */,
 				CE7F40BD1F46FFA300A33D39 /* Film.swift in Sources */,
 				CE7F40BF1F47015100A33D39 /* ViewModel.swift in Sources */,
-				CE7F40C11F47070100A33D39 /* UserCases.swift in Sources */,
 				CE324E2D1F46DE39008A65E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
