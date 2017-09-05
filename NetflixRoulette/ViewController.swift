@@ -54,20 +54,6 @@ class ViewController: UIViewController {
     }
     
     func setUpBindings() {
-//        let searchResult = searchBar.rx.value.orEmpty.throttle(1, scheduler: MainScheduler.instance)
-//        .distinctUntilChanged()
-//            .flatMapLatest { query -> Observable<Film> in
-//                print("getfilms \(query)")
-//                if (query.isEmpty) {
-//                    return self.viewModel.getFilms(title: "")
-//                }
-//                else {
-//                    return self.viewModel.getFilms(title: query)
-//                }
-//
-//        }
-//        .observeOn(MainScheduler.instance)
-        
         searchBar.rx.value.orEmpty
             .distinctUntilChanged()
             .bindTo(viewModel.title)
