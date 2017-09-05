@@ -54,32 +54,32 @@ class ViewController: UIViewController {
     }
     
     func setUpBindings() {
-        let searchResult = searchBar.rx.value.orEmpty.throttle(1, scheduler: MainScheduler.instance)
-        .distinctUntilChanged()
-            .flatMapLatest { query -> Observable<Film> in
-                print("getfilms \(query)")
-                if (query.isEmpty) {
-                    return self.viewModel.getFilms(title: "")
-                }
-                else {
-                    return self.viewModel.getFilms(title: query)
-                }
-                
-        }
-        .observeOn(MainScheduler.instance)
+//        let searchResult = searchBar.rx.value.orEmpty.throttle(1, scheduler: MainScheduler.instance)
+//        .distinctUntilChanged()
+//            .flatMapLatest { query -> Observable<Film> in
+//                print("getfilms \(query)")
+//                if (query.isEmpty) {
+//                    return self.viewModel.getFilms(title: "")
+//                }
+//                else {
+//                    return self.viewModel.getFilms(title: query)
+//                }
+//
+//        }
+//        .observeOn(MainScheduler.instance)
         
-        searchResult.subscribe(onNext: { (film) in
+        searchBar.rx.value.orEmpty
+            .distinctUntilChanged()
+            .bindTo(viewModel.title)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.film.asDriver().drive(onNext: { (film) in
             self.label1.text = film.show_title
             self.label2.text = film.director
             self.label3.text = film.release_year
             self.label4.text = film.summary
-        }, onError: { (error) in
-            self.label1.text = error.localizedDescription
-            self.label2.text = ""
-            self.label3.text = ""
-            self.label4.text = ""
-        } , onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
+        }, onCompleted: nil, onDisposed: nil)
+            .addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
