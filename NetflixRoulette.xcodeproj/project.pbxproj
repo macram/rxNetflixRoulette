@@ -16,6 +16,9 @@
 		CE7F40BD1F46FFA300A33D39 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40BC1F46FFA300A33D39 /* Film.swift */; };
 		CE7F40BF1F47015100A33D39 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40BE1F47015100A33D39 /* ViewModel.swift */; };
 		CE7F40C31F47070A00A33D39 /* Fachada.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F40C21F47070A00A33D39 /* Fachada.swift */; };
+		CEE4C0771F5FED850008AF12 /* FilmArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4C0761F5FED850008AF12 /* FilmArray.swift */; };
+		CEE4C0791F5FFA430008AF12 /* FIlmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4C0781F5FFA430008AF12 /* FIlmsViewController.swift */; };
+		CEE4C07B1F60014B0008AF12 /* FilmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4C07A1F60014B0008AF12 /* FilmsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		CE7F40BC1F46FFA300A33D39 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		CE7F40BE1F47015100A33D39 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CE7F40C21F47070A00A33D39 /* Fachada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fachada.swift; sourceTree = "<group>"; };
+		CEE4C0761F5FED850008AF12 /* FilmArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmArray.swift; sourceTree = "<group>"; };
+		CEE4C0781F5FFA430008AF12 /* FIlmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlmsViewController.swift; sourceTree = "<group>"; };
+		CEE4C07A1F60014B0008AF12 /* FilmsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +84,14 @@
 				CE7F40BB1F46FF9200A33D39 /* Model */,
 				CE324E2C1F46DE39008A65E4 /* AppDelegate.swift */,
 				CE324E2E1F46DE39008A65E4 /* ViewController.swift */,
-				CE7F40BE1F47015100A33D39 /* ViewModel.swift */,
 				CE7F40C21F47070A00A33D39 /* Fachada.swift */,
+				CE7F40BE1F47015100A33D39 /* ViewModel.swift */,
 				CE324E301F46DE39008A65E4 /* Main.storyboard */,
 				CE324E331F46DE39008A65E4 /* Assets.xcassets */,
 				CE324E351F46DE39008A65E4 /* LaunchScreen.storyboard */,
 				CE324E381F46DE39008A65E4 /* Info.plist */,
+				CEE4C0781F5FFA430008AF12 /* FIlmsViewController.swift */,
+				CEE4C07A1F60014B0008AF12 /* FilmsViewModel.swift */,
 			);
 			path = NetflixRoulette;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7F40BC1F46FFA300A33D39 /* Film.swift */,
+				CEE4C0761F5FED850008AF12 /* FilmArray.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,9 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7F40C31F47070A00A33D39 /* Fachada.swift in Sources */,
+				CEE4C0791F5FFA430008AF12 /* FIlmsViewController.swift in Sources */,
 				CE324E2F1F46DE39008A65E4 /* ViewController.swift in Sources */,
 				CE7F40BD1F46FFA300A33D39 /* Film.swift in Sources */,
+				CEE4C0771F5FED850008AF12 /* FilmArray.swift in Sources */,
 				CE7F40BF1F47015100A33D39 /* ViewModel.swift in Sources */,
+				CEE4C07B1F60014B0008AF12 /* FilmsViewModel.swift in Sources */,
 				CE324E2D1F46DE39008A65E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

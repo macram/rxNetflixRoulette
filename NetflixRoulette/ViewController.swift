@@ -39,6 +39,12 @@ class ViewController: UIViewController {
         setUpBindings()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.searchBar.resignFirstResponder()
+    }
+    
     func setUpSearchBar() {
         searchBar.placeholder = "Title"
         searchBar.barTintColor = UIColor.red

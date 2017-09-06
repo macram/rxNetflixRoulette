@@ -35,6 +35,34 @@
             </objects>
             <point key="canvasLocation" x="-674" y="118"/>
         </scene>
+        <!--Films View Controller-->
+        <scene sceneID="dXr-nZ-mQP">
+            <objects>
+                <tableViewController id="oBe-Rx-xB6" customClass="FilmsViewController" customModule="NetflixRoulette" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y3F-Wc-wug">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sxK-io-rQB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxK-io-rQB" id="cq1-2L-2zZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oBe-Rx-xB6" id="Tcs-rM-euR"/>
+                            <outlet property="delegate" destination="oBe-Rx-xB6" id="Xsm-6p-FrI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Orb-Rp-NxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="116"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="aen-35-ORI">
             <objects>
@@ -71,6 +99,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJs-rL-f3N">
+                                <rect key="frame" x="16" y="161.5" width="343" height="30"/>
+                                <state key="normal" title="Buscar por actor"/>
+                                <connections>
+                                    <segue destination="oBe-Rx-xB6" kind="show" id="dbJ-PU-Cvu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,9 +114,12 @@
                             <constraint firstItem="T78-fi-lke" firstAttribute="leading" secondItem="hUB-5a-Xvg" secondAttribute="leading" id="5tO-4R-dS3"/>
                             <constraint firstItem="T78-fi-lke" firstAttribute="firstBaseline" secondItem="hUB-5a-Xvg" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ENJ-Um-0AW"/>
                             <constraint firstItem="mQV-1N-ZfW" firstAttribute="leading" secondItem="bSZ-Is-qpu" secondAttribute="leading" constant="16" id="JZ8-tS-Ly8"/>
+                            <constraint firstItem="CJs-rL-f3N" firstAttribute="trailing" secondItem="EeE-QW-mNz" secondAttribute="trailing" id="Mjz-wg-vhp"/>
                             <constraint firstItem="T78-fi-lke" firstAttribute="trailing" secondItem="hUB-5a-Xvg" secondAttribute="trailing" id="Mxo-Bw-TpV"/>
                             <constraint firstItem="EeE-QW-mNz" firstAttribute="trailing" secondItem="T78-fi-lke" secondAttribute="trailing" id="N2l-15-gYK"/>
                             <constraint firstItem="hUB-5a-Xvg" firstAttribute="firstBaseline" secondItem="mQV-1N-ZfW" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Og5-J9-Cv7"/>
+                            <constraint firstItem="CJs-rL-f3N" firstAttribute="firstBaseline" secondItem="EeE-QW-mNz" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="PFr-Zm-4C8"/>
+                            <constraint firstItem="CJs-rL-f3N" firstAttribute="leading" secondItem="EeE-QW-mNz" secondAttribute="leading" id="d5d-dK-kbR"/>
                             <constraint firstItem="EeE-QW-mNz" firstAttribute="leading" secondItem="T78-fi-lke" secondAttribute="leading" id="exJ-8p-koQ"/>
                             <constraint firstItem="hUB-5a-Xvg" firstAttribute="trailing" secondItem="mQV-1N-ZfW" secondAttribute="trailing" id="fkJ-4F-JcU"/>
                             <constraint firstAttribute="trailing" secondItem="mQV-1N-ZfW" secondAttribute="trailing" constant="16" id="mba-YW-wNx"/>
@@ -99,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kss-9X-yU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="127"/>
+            <point key="canvasLocation" x="186" y="117"/>
         </scene>
     </scenes>
 </document>
