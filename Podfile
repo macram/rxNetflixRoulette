@@ -7,7 +7,7 @@ target 'NetflixRoulette' do
 
   # Pods for NetflixRoulette
   pod 'Alamofire', '~> 4.4'
-  pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'RxAlamofire'
-  pod "RxObjectMapper"
+  
+  pod 'RxDataSources', '~> 1.0'
 end

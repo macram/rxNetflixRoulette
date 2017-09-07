@@ -15,15 +15,21 @@ class FilmsViewModel: NSObject {
     
     var films: Variable<[Film]> = Variable<[Film]>([])
     var actor: Variable<String> = Variable<String>("")
+    var obsFilms: Observable<[SectionOfFilms]>?
     
     var disposeBag = DisposeBag()
     
     init(fachada: Fachada) {
         super.init()
-        
+
         self.fachada = Fachada()
         
         self.setUpBindings()
+        
+        obsFilms = films.asObservable()
+            .map({ (films) -> [SectionOfFilms] in
+                return [SectionOfFilms(header: "", items: films)]
+            })
     }
     
     func getFilms(actor: String) -> Observable<[Film]> {

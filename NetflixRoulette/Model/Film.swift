@@ -5,6 +5,7 @@
 //  Created by Manu Mateos on 18/8/17.
 //  Copyright © 2017 Liquid Squad. All rights reserved.
 //
+import RxDataSources
 
 struct Film {
     var unit: Int?
@@ -49,3 +50,17 @@ struct Film {
     }
     
 }
+
+struct SectionOfFilms {
+    var header: String
+    var items: [Film]
+}
+extension SectionOfFilms: SectionModelType {
+    typealias Item = Film
+    
+    init(original: SectionOfFilms, items: [Film]) {
+        self = original
+        self.items = items
+    }
+}
+

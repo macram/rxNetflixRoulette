@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class FilmsViewController: UITableViewController {
     
@@ -63,12 +64,25 @@ class FilmsViewController: UITableViewController {
             .bindTo(viewModel.actor)
             .addDisposableTo(disposeBag)
         
-//        viewModel.film.asDriver().drive(onNext: { (film) in
-//            self.label1.text = film.show_title
-//            self.label2.text = film.director
-//            self.label3.text = film.release_year
-//            self.label4.text = film.summary
-//        }, onCompleted: nil, onDisposed: nil)
-//            .addDisposableTo(disposeBag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfFilms>()
+        
+        dataSource.configureCell = { (ds: TableViewSectionedDataSource<SectionOfFilms>, tv: UITableView, ip: IndexPath, item: Film) in
+            let cell = tv.dequeueReusableCell(withIdentifier: "Cell", for: ip)
+            cell.textLabel?.text = "\(item.show_title!)"
+            cell.detailTextLabel?.text = "Dirigida por \(item.director!), año \(item.release_year!)"
+            return cell
+        }
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].header
+        }
+        
+        tableView.delegate = nil
+        tableView.dataSource = nil
+        
+        viewModel.obsFilms!.asObservable()
+            .bindTo(tableView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
     }
+    
+    
 }
