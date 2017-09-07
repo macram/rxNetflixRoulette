@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nVe-SZ-TLl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Qf-ye-eWX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,17 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Por título-->
         <scene sceneID="52n-ef-fXY">
             <objects>
                 <navigationController hidesBarsOnSwipe="YES" id="nVe-SZ-TLl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Por título" image="icons8-Películas Disney Filled-50" id="hPd-DR-mbG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ybf-GN-abV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <outlet property="searchDisplayController" destination="5sa-GI-Ago" id="Bfb-Ex-C4e"/>
-                        <segue destination="BzD-dR-Cpd" kind="relationship" relationship="rootViewController" id="r7U-he-9WQ"/>
+                        <segue destination="BzD-dR-Cpd" kind="relationship" relationship="rootViewController" id="RZv-8X-hpr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne8-qM-nOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -33,12 +34,29 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-674" y="118"/>
+            <point key="canvasLocation" x="236" y="-269"/>
         </scene>
-        <!--Films View Controller-->
+        <!--Por actor-->
+        <scene sceneID="Kml-40-akJ">
+            <objects>
+                <navigationController id="LNA-rr-Il3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Por actor" image="icons8-Cine negro Filled-50" id="UIk-BZ-Gej"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z9k-Oo-KAB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oBe-Rx-xB6" kind="relationship" relationship="rootViewController" id="2F6-T4-UgV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYo-2v-qhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="436"/>
+        </scene>
+        <!--Actor-->
         <scene sceneID="dXr-nZ-mQP">
             <objects>
-                <tableViewController id="oBe-Rx-xB6" customClass="FilmsViewController" customModule="NetflixRoulette" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Actor" id="oBe-Rx-xB6" customClass="FilmsViewController" customModule="NetflixRoulette" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y3F-Wc-wug">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,14 +70,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M4m-Mi-FdQ">
-                                            <rect key="frame" x="16" y="5" width="33" height="20"/>
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fW1-4P-BcY">
-                                            <rect key="frame" x="16" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -74,15 +92,17 @@
                             <outlet property="delegate" destination="oBe-Rx-xB6" id="Xsm-6p-FrI"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="yaa-Ga-oqe"/>
+                    <navigationItem key="navigationItem" id="qOQ-Ge-gOB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orb-Rp-NxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="116"/>
+            <point key="canvasLocation" x="972" y="436"/>
         </scene>
-        <!--View Controller-->
+        <!--Título-->
         <scene sceneID="aen-35-ORI">
             <objects>
-                <viewController id="BzD-dR-Cpd" customClass="ViewController" customModule="NetflixRoulette" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Título" id="BzD-dR-Cpd" customClass="ViewController" customModule="NetflixRoulette" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lW4-WM-ZY6"/>
                         <viewControllerLayoutGuide type="bottom" id="Iix-EO-OXS"/>
@@ -115,13 +135,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJs-rL-f3N">
-                                <rect key="frame" x="16" y="161.5" width="343" height="30"/>
-                                <state key="normal" title="Buscar por actor"/>
-                                <connections>
-                                    <segue destination="oBe-Rx-xB6" kind="show" id="dbJ-PU-Cvu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,12 +143,9 @@
                             <constraint firstItem="T78-fi-lke" firstAttribute="leading" secondItem="hUB-5a-Xvg" secondAttribute="leading" id="5tO-4R-dS3"/>
                             <constraint firstItem="T78-fi-lke" firstAttribute="firstBaseline" secondItem="hUB-5a-Xvg" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ENJ-Um-0AW"/>
                             <constraint firstItem="mQV-1N-ZfW" firstAttribute="leading" secondItem="bSZ-Is-qpu" secondAttribute="leading" constant="16" id="JZ8-tS-Ly8"/>
-                            <constraint firstItem="CJs-rL-f3N" firstAttribute="trailing" secondItem="EeE-QW-mNz" secondAttribute="trailing" id="Mjz-wg-vhp"/>
                             <constraint firstItem="T78-fi-lke" firstAttribute="trailing" secondItem="hUB-5a-Xvg" secondAttribute="trailing" id="Mxo-Bw-TpV"/>
                             <constraint firstItem="EeE-QW-mNz" firstAttribute="trailing" secondItem="T78-fi-lke" secondAttribute="trailing" id="N2l-15-gYK"/>
                             <constraint firstItem="hUB-5a-Xvg" firstAttribute="firstBaseline" secondItem="mQV-1N-ZfW" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Og5-J9-Cv7"/>
-                            <constraint firstItem="CJs-rL-f3N" firstAttribute="firstBaseline" secondItem="EeE-QW-mNz" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="PFr-Zm-4C8"/>
-                            <constraint firstItem="CJs-rL-f3N" firstAttribute="leading" secondItem="EeE-QW-mNz" secondAttribute="leading" id="d5d-dK-kbR"/>
                             <constraint firstItem="EeE-QW-mNz" firstAttribute="leading" secondItem="T78-fi-lke" secondAttribute="leading" id="exJ-8p-koQ"/>
                             <constraint firstItem="hUB-5a-Xvg" firstAttribute="trailing" secondItem="mQV-1N-ZfW" secondAttribute="trailing" id="fkJ-4F-JcU"/>
                             <constraint firstAttribute="trailing" secondItem="mQV-1N-ZfW" secondAttribute="trailing" constant="16" id="mba-YW-wNx"/>
@@ -143,6 +153,7 @@
                             <constraint firstItem="hUB-5a-Xvg" firstAttribute="leading" secondItem="mQV-1N-ZfW" secondAttribute="leading" id="tLe-3k-Jhi"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3rK-1J-weK"/>
                     <navigationItem key="navigationItem" id="jqS-cn-yJt"/>
                     <connections>
                         <outlet property="label1" destination="mQV-1N-ZfW" id="eG7-1t-bxa"/>
@@ -153,7 +164,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kss-9X-yU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186" y="117"/>
+            <point key="canvasLocation" x="972" y="-269"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2Og-zZ-Hhf">
+            <objects>
+                <tabBarController id="5Qf-ye-eWX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tDU-cd-TS0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nVe-SZ-TLl" kind="relationship" relationship="viewControllers" id="Mvs-6N-kbT"/>
+                        <segue destination="LNA-rr-Il3" kind="relationship" relationship="viewControllers" id="KM1-c7-YFI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqz-G7-Grw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1086" y="120"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Cine negro Filled-50" width="25" height="25"/>
+        <image name="icons8-Películas Disney Filled-50" width="25" height="25"/>
+    </resources>
 </document>
