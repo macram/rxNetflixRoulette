@@ -76,7 +76,7 @@ class FilmsViewController: UITableViewController {
             return ds.sectionModels[index].header
         }
         
-        tableView.delegate = nil
+        tableView.delegate = self
         tableView.dataSource = nil
         
         viewModel.obsFilms!.asObservable()
@@ -84,5 +84,20 @@ class FilmsViewController: UITableViewController {
             .addDisposableTo(disposeBag)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "FilmDetailFromActor" else {
+            return
+        }
+        
+        let destinationView = segue.destination as! FilmDetailViewController
+        let _ = destinationView.view
+        let film = viewModel.films.value[tableView.indexPathForSelectedRow!.row]
+        
+        destinationView.label1.text = film.show_title!
+        destinationView.label2.text = film.director!
+        destinationView.label3.text = film.show_cast!
+        destinationView.label4.text = film.release_year!
+        destinationView.label5.text = film.summary!
+    }
     
 }
