@@ -47,4 +47,12 @@ class Fachada: NSObject {
             })
             .asObservable()
     }
+    
+    func getImage(url: String) -> Observable<UIImage> {
+        return RxAlamofire.requestData(.get, url)
+            .map({ (r, data) -> UIImage in
+                return UIImage(data: data)!
+            })
+        .asObservable()
+    }
 }

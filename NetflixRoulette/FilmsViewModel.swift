@@ -22,7 +22,7 @@ class FilmsViewModel: NSObject {
     init(fachada: Fachada) {
         super.init()
 
-        self.fachada = Fachada()
+        self.fachada = fachada
         
         self.setUpBindings()
         

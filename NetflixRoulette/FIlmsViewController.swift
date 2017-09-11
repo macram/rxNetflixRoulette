@@ -98,6 +98,7 @@ class FilmsViewController: UITableViewController {
         destinationView.label3.text = film.show_cast!
         destinationView.label4.text = film.release_year!
         destinationView.label5.text = film.summary!
+        destinationView.viewModel.imageUrl.value = film.poster!
     }
     
 }
