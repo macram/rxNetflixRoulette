@@ -28,10 +28,10 @@ class FilmsDetailViewModel: NSObject {
     func setUpBindings() {
         imageUrl.asDriver()
             .drive(onNext: { (i) in
-                let realUrl = i.replacingOccurrences(of: "http", with: "https")
+                let realUrl = ("https://image.tmdb.org/t/p/w500" + i)
                 print(realUrl)
                 self.fachada.getImage(url: realUrl).subscribe({ (image) in
-                    if image.element != nil {
+                    if i != "" && image.element != nil {
                         self.image.value = image.element!
                     }
                 })

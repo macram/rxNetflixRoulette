@@ -60,6 +60,7 @@ class FilmsViewController: UITableViewController {
 
     func setUpBindings() {
         searchBar.rx.value.orEmpty
+//            .throttle(1, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .bindTo(viewModel.actor)
             .addDisposableTo(disposeBag)
@@ -68,8 +69,8 @@ class FilmsViewController: UITableViewController {
         
         dataSource.configureCell = { (ds: TableViewSectionedDataSource<SectionOfFilms>, tv: UITableView, ip: IndexPath, item: Film) in
             let cell = tv.dequeueReusableCell(withIdentifier: "Cell", for: ip)
-            cell.textLabel?.text = "\(item.show_title!)"
-            cell.detailTextLabel?.text = "Dirigida por \(item.director!), año \(item.release_year!)"
+            cell.textLabel?.text = "\(item.title ?? "")"
+            cell.detailTextLabel?.text = "\(item.original_title ?? ""), \(item.release_date ?? "")"
             return cell
         }
         dataSource.titleForHeaderInSection = { ds, index in
@@ -93,12 +94,12 @@ class FilmsViewController: UITableViewController {
         let _ = destinationView.view
         let film = viewModel.films.value[tableView.indexPathForSelectedRow!.row]
         
-        destinationView.label1.text = film.show_title!
-        destinationView.label2.text = film.director!
-        destinationView.label3.text = film.show_cast!
-        destinationView.label4.text = film.release_year!
-        destinationView.label5.text = film.summary!
-        destinationView.viewModel.imageUrl.value = film.poster!
+        destinationView.label1.text = film.title!
+        destinationView.label2.text = film.original_title!
+        destinationView.label3.text = "\(film.popularity!)"
+        destinationView.label4.text = film.release_date!
+        destinationView.label5.text = film.overview!
+        destinationView.viewModel.imageUrl.value = film.poster_path!
     }
     
 }

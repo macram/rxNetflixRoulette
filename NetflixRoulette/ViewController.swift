@@ -66,10 +66,10 @@ class ViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         viewModel.film.asDriver().drive(onNext: { (film) in
-            self.label1.text = film.show_title
-            self.label2.text = film.director
-            self.label3.text = film.release_year
-            self.label4.text = film.summary
+            self.label1.text = film.title
+            self.label2.text = film.original_title
+            self.label3.text = film.release_date
+            self.label4.text = film.overview
         }, onCompleted: nil, onDisposed: nil)
             .addDisposableTo(disposeBag)
     }

@@ -40,7 +40,6 @@ class FilmsViewModel: NSObject {
         print("Setup bindings")
         actor.asDriver().throttle(1)
             .drive(onNext: { (a) in
-                print("Actor "+a)
                 self.getFilms(actor: a).subscribe({ (films) in
                     if films.element != nil {
                         self.films.value = films.element!

@@ -28,6 +28,7 @@ class FilmDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setUpBindings()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +37,9 @@ class FilmDetailViewController: UIViewController {
     }
     
     func setUpBindings() {
-        viewModel.image.asObservable().bindTo(image.rx.image).addDisposableTo(disposeBag)
+        viewModel.image.asObservable()
+            .bindTo(image.rx.image)
+            .addDisposableTo(disposeBag)
     }
 
 }
