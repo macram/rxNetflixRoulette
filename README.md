@@ -1,6 +1,6 @@
 # rxNetflixRoulette
 
-rxNetflixRoulette is an example iOS app implemented using RxSwift which uses the [NetflixRoulette API](https://netflixroulette.net/api/). The application will retrieve details from a film given a title.
+rxNetflixRoulette is an example iOS app implemented using RxSwift which used the [NetflixRoulette API](https://netflixroulette.net/api/), but turned to use the [TMDb API]() after the first one closing. The application will retrieve details from a film given a title or an actor.
 
 * Alamofire/RxAlamofire
 * RxSwift / RxCocoa
@@ -11,7 +11,9 @@ I developed this application while trying to learn Functional Reactive Programmi
 
 I used two variants of MVVM architecture. The one in the Master branch is not completely MVVM; it only uses raw Observables and the code is not quite decoupled. 
 
-The one in the _withDrivers_ branch is prettier (I think), using Drivers and binding. Please give me any comments you have about it; the main purpose of me developing this application is learning RxSwift.
+The one in the `withDrivers` branch is prettier (I think), using Drivers and binding. Please give me any comments you have about it; the main purpose of me developing this application is learning RxSwift.
+
+Forget all branches but `tmdb`. It's the only one currently working.
 
 ## RxSwift resources
 
