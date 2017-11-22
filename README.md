@@ -1,6 +1,6 @@
 # rxNetflixRoulette
 
-rxNetflixRoulette is an example iOS app implemented using RxSwift which used the [NetflixRoulette API](https://netflixroulette.net/api/), but turned to use the [TMDb API]() after the first one closing. The application will retrieve details from a film given a title or an actor.
+rxNetflixRoulette is an example iOS app implemented using RxSwift which used the [NetflixRoulette API](https://netflixroulette.net/api/), but turned to use the [TMDb API](https://www.themoviedb.org/documentation/api) after the first one closing. The application will retrieve details from a film given a title or an actor.
 
 * Alamofire/RxAlamofire
 * RxSwift / RxCocoa
